@@ -79,8 +79,8 @@ void setup() {
 	if ((WIFI_connected != WL_CONNECTED) or !CFG_saved) {
 		// DEFAULT CONFIG
 		Serial.println("Setting AP mode default parameters");
-		config.ssid = "YOUR_WIFI_SSID_HERE"; // SSID of access point
-		config.password = "YOUR_WIFI_PASSWORD_HERE";
+		config.ssid = "TriangleLedClock"; // SSID of access point
+		config.password = "admin1234";
 		config.dhcp = true;
 		config.IP[0] = 192;
 		config.IP[1] = 168;
