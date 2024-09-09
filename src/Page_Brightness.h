@@ -80,7 +80,6 @@ void brightness_Set_values_html()
 
 void updateBrightness() {
   int minutesSinceMidnight = (DateTime.hour * 60) + DateTime.minute;
-  minutesSinceMidnight += 180;
   BRIGHTNESS = config.brightnessHigh;
 
   if (config.spreadSunrise == 0 ) {
