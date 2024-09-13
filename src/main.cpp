@@ -11,7 +11,7 @@
 #define LED_PIN 4
 #define NUM_LEDS  96
 CRGB leds[NUM_LEDS];
-uint8 BRIGHTNESS = 200;
+int8 BRIGHTNESS = 200;
 int led_list[NUM_LEDS];
 int temp_minute = 0;
 int temp_second = 0;

@@ -92,7 +92,7 @@ void updateBrightness() {
 
   // Before sunrise ended
   if (minutesSinceMidnight < (sunRise + config.offsetSunrise) + config.spreadSunrise) {
-    BRIGHTNESS = max(0 , (int) (config.brightnessLow + ( (float) abs( config.brightnessHigh - config.brightnessLow ) / (float) -(config.spreadSunrise * 2) ) * ( minutesSinceMidnight - ( ( sunRise + config.offsetSunrise ) - config.spreadSunrise ) ) ) );
+    BRIGHTNESS = max(0 , (int) (config.brightnessLow + ( (float) abs( config.brightnessHigh - config.brightnessLow ) / (float) (config.spreadSunrise * 2) ) * ( minutesSinceMidnight - ( ( sunRise + config.offsetSunrise ) - config.spreadSunrise ) ) ) );
     BRIGHTNESS = max( min( (int) BRIGHTNESS, config.brightnessHigh ), config.brightnessLow );
   }
 
@@ -111,9 +111,6 @@ void calculateSun() {
   sun.setTZOffset(summerTime(ConvertDate(DateTime.year, DateTime.month, DateTime.day, DateTime.hour, DateTime.minute, DateTime.second)) ? 2 : 1);
   sunRise = sun.calcSunrise();
   sunSet = sun.calcSunset();
-  Serial.print("Calulating sunset and sunrise for : "); Serial.print(DateTime.day); Serial.print("-"); Serial.print(DateTime.month); Serial.print("-"); Serial.println(DateTime.year);
-  Serial.print("Calulated sunrise: "); Serial.println(sunRise);
-  Serial.print("Calculated Sunset : "); Serial.println(sunSet);
 }
 
 #endif
